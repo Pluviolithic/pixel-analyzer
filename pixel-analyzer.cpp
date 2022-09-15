@@ -7,9 +7,6 @@
 #include <string>
 #include <vector>
 
-// wouldn't normally do this, but the simplicity of the program avoids namespace
-// clashes/ambiguities
-
 int main(int argc, char **argv) {
 
   Magick::InitializeMagick(*argv);
@@ -61,6 +58,8 @@ int main(int argc, char **argv) {
   std::string mostCommonPixel = "ERR";
   int mostCommonPixelCount = 0;
 
+  // utilize a simple loop to find the most commonly appearing pixel and save
+  // its r.g.b value and appearance count
   for (const auto &p : colors) {
     if (p.second > mostCommonPixelCount) {
       mostCommonPixel = p.first;
@@ -76,6 +75,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
+  // parse the string of the form r.g.b into a token vector for easier access
   std::istringstream iss(mostCommonPixel);
   std::vector<std::string> tokens;
   std::string token;
