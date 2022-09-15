@@ -12,7 +12,7 @@ For now, there will only be instructions for systems which use the apt package m
 1. I recommend g++ for this project. It can be installed via `apt install g++`.
 2. Run the following command with all the associated config flags.
 ```sh
-g++ pixel-analyzer.cpp `Magick++-config --cxxflags --cppflags --ldflags --libs`
+$ g++ pixel-analyzer.cpp `Magick++-config --cxxflags --cppflags --ldflags --libs`
 ```
 
 # Usage
